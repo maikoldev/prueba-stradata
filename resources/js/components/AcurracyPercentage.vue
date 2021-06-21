@@ -60,7 +60,7 @@ export default {
   methods: {
     search() {
       const { name, percentage } = this.form;
-      const apiUrl = 'http://prueba-stradata.test/api/accuracy-percentage';
+      const apiUrl = `${process.env.MIX_APP_URL}/api/accuracy-percentage`;
       const urlParams = `?name=${name}&percentage=${percentage}`;
 
       this.results = null;
