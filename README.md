@@ -37,8 +37,16 @@ yarn install
 yarn dev
 ```
 
+## Credenciales de Login
+
+Usuario: me@maikoldev.com
+<br/>
+Password: 123456789
+
+<br/>
 Abrir en servidor local [http://localhost:3000](http://localhost:3000)
 
-<br>
+<br/>
+<br/>
 
 ### El proyecto esta corriendo en [https://prueba-stradata.maikoldev.com/](https://prueba-stradata.maikoldev.com/)

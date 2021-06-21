@@ -11,7 +11,23 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- Volcando datos para la tabla prueba-stradata.diccionario: ~4,995 rows (aproximadamente)
+-- Volcando estructura para tabla prueba-stradata.diccionario
+DROP TABLE IF EXISTS `diccionario`;
+CREATE TABLE IF NOT EXISTS `diccionario` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `departamento` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `localidad` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `municipio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `años_activo` bigint(20) NOT NULL,
+  `tipo_persona` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tipo_cargo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5001 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla prueba-stradata.diccionario: ~5,000 rows (aproximadamente)
 /*!40000 ALTER TABLE `diccionario` DISABLE KEYS */;
 INSERT INTO `diccionario` (`id`, `departamento`, `localidad`, `municipio`, `nombre`, `años_activo`, `tipo_persona`, `tipo_cargo`, `created_at`, `updated_at`) VALUES
 	(1, 'LA_GUAJIRA', 'NO APLICA', 'NO APLICA', 'Oneida Rayeth Pinto Perez', 1, 'NO APLICA', 'POLITICO', NULL, NULL),
@@ -5016,9 +5032,32 @@ INSERT INTO `diccionario` (`id`, `departamento`, `localidad`, `municipio`, `nomb
 	(5000, 'SUCRE', 'COMUNA 5 CENTRAL', 'SINCELEJO', 'Felipe Jose Mebarak Garzon', 81, 'PREFERENTE', 'ACTOR', NULL, NULL);
 /*!40000 ALTER TABLE `diccionario` ENABLE KEYS */;
 
+-- Volcando estructura para tabla prueba-stradata.failed_jobs
+DROP TABLE IF EXISTS `failed_jobs`;
+CREATE TABLE IF NOT EXISTS `failed_jobs` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 -- Volcando datos para la tabla prueba-stradata.failed_jobs: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `failed_jobs` DISABLE KEYS */;
 /*!40000 ALTER TABLE `failed_jobs` ENABLE KEYS */;
+
+-- Volcando estructura para tabla prueba-stradata.migrations
+DROP TABLE IF EXISTS `migrations`;
+CREATE TABLE IF NOT EXISTS `migrations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla prueba-stradata.migrations: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
@@ -5029,11 +5068,35 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(4, '2021_06_20_005858_create_diccionario_table', 1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 
+-- Volcando estructura para tabla prueba-stradata.password_resets
+DROP TABLE IF EXISTS `password_resets`;
+CREATE TABLE IF NOT EXISTS `password_resets` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 -- Volcando datos para la tabla prueba-stradata.password_resets: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `password_resets` DISABLE KEYS */;
 /*!40000 ALTER TABLE `password_resets` ENABLE KEYS */;
 
--- Volcando datos para la tabla prueba-stradata.users: ~0 rows (aproximadamente)
+-- Volcando estructura para tabla prueba-stradata.users
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla prueba-stradata.users: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 	(2, 'Jhon Michael Garcia Cuellar', 'me@maikoldev.com', NULL, '$2y$10$7mnW.qN6YvZiSsRsx/cQk.BTVOugtyh7cwJQyHUknQFaJMI8Dv6gS', NULL, '2021-06-21 08:51:38', '2021-06-21 08:51:38');
