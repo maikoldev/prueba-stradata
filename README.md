@@ -49,4 +49,4 @@ Abrir en servidor local [http://localhost:3000](http://localhost:3000)
 <br/>
 <br/>
 
-### El proyecto esta corriendo en [https://prueba-stradata.maikoldev.com/](https://prueba-stradata.maikoldev.com/)
+### El proyecto esta corriendo en [http://prueba-stradata.maikoldev.com/public](http://prueba-stradata.maikoldev.com/public)
